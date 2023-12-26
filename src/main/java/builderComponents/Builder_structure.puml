@@ -1,0 +1,304 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "builderComponents.Builder",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_104069929 { 
+   	label=model
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ImageText104069929[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ImageText</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   panel: StackPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   temp_view: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   text: Text [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addImage(image: Image)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addText(text: Text)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ clearPane()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1297528322 { 
+   	label=ImageComponent
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ImagePane1297528322[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ImagePane</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   color: Color [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   count: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   date: LocalTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fade: FadeTransition [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   meme: ImageText [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   memeBuilder: ImageBuilder [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   memeDirector: Director [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   text: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ buildMeme(): StackPane</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_2005259558 { 
+   	label=observer
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   HelloController2039717799[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HelloController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   ImagePane: StackPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   MediaPage: BorderPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   TimerText: BorderPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   clockComponent: ClockComponent [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   clockPaint: ClockPaint [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   color: ColorPicker [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imageComponentPane: ImagePane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   textField: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   timeServer: TimeServer [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ initialize(url: URL, resourceBundle: ResourceBundle)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+subgraph cluster_480026252 { 
+   	label=observerComponents
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   TimeServer480026252[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TimeServer</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentDate: Date [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   observers: List&lt;Observer&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   task: TimerTask [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   timer: Timer [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attach(obs: Observer)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ detach(obs: Observer)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ notifyAllObserver()</TD></TR>
+<TR><TD ALIGN="LEFT" >- tick()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_75249391 { 
+   	label=builderComponents
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Builder75249391[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(I)Builder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ build(): ImageText</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setColor(color: Color)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setDesign()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setImage()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setText(text: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+ImageBuilder75249391[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ImageBuilder</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fileTopic: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   img: ImageText [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   text: Text [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ build(): ImageText</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_901924444 { 
+   	label=ClockComponents
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ClockComponent901924444[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ClockComponent</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   date: LocalTime [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   text: Text [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ update()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ClockPaint901924444[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ClockPaint</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   canvas: Canvas [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   gc: GraphicsContext [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   height: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   panel: StackPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   width: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- drawClock(gc: GraphicsContext)</TD></TR>
+<TR><TD ALIGN="LEFT" >- drawHand(gc: GraphicsContext, centerX: double, centerY: double, angle: double, handLength: double, color: Color)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Builder75249391 -> ImageBuilder75249391[arrowhead=none, arrowtail=empty, dir=both];
+HelloController2039717799 -> ClockComponent901924444[label="clockComponent
+[0..1]"];
+HelloController2039717799 -> ClockPaint901924444[label="clockPaint
+[0..1]"];
+HelloController2039717799 -> ImagePane1297528322[label="imageComponentPane
+[0..1]"];
+HelloController2039717799 -> TimeServer480026252[label="timeServer
+[0..1]"];
+ImageBuilder75249391 -> ImageText104069929[label="img
+[0..1]"];
+ImagePane1297528322 -> ClockComponent901924444[arrowhead=none];
+ImagePane1297528322 -> ClockPaint901924444[arrowhead=none];
+ImagePane1297528322 -> ImageBuilder75249391[label="memeBuilder
+[0..1]"];
+TimeServer480026252 -> ImagePane1297528322[label="observers
+[0..*]", arrowhead=none];
+    
+}
+@enduml
