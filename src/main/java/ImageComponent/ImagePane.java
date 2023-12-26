@@ -17,7 +17,7 @@ public class ImagePane implements Observer {
     String text;
     Color color;
     private final FadeTransition fade = new FadeTransition();
-    {инициализация анимации}
+
     public ImagePane(String text, Color color){
         memeBuilder = new ImageBuilder();
         memeDirector = new Director();
@@ -32,9 +32,11 @@ this.color=color;
         return meme.getPanel();
     }
     @Override
-    public void update() {
-        if (какой-то счетчик проверить){
-            
+    public void update(Date date) {
+        if (date.getSeconds() % 5 == 0){
+            fade.setDuration(new Duration(1200));
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
             fade.play();
             this.meme = new Director().Construct(memeBuilder, text, color);
         }
