@@ -9,6 +9,7 @@ import javafx.util.Duration;
 import model.ImageText;
 import observerComponents.Infastructure.Observer;
 
+import java.time.LocalTime;
 import java.util.Date;
 public class ImagePane implements Observer {
     private Director memeDirector;
@@ -17,7 +18,7 @@ public class ImagePane implements Observer {
     String text;
     Color color;
     private final FadeTransition fade = new FadeTransition();
-    {инициализация анимации}
+private int count = 0;
     public ImagePane(String text, Color color){
         memeBuilder = new ImageBuilder();
         memeDirector = new Director();
@@ -31,10 +32,14 @@ this.color=color;
     public StackPane buildMeme(){
         return meme.getPanel();
     }
+    LocalTime date;
     @Override
     public void update() {
-        if (какой-то счетчик проверить){
-            
+        date= LocalTime.now();
+        if (date.getSecond() % 5 == 0){
+            fade.setDuration(new Duration(1200));
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
             fade.play();
             this.meme = new Director().Construct(memeBuilder, text, color);
         }
