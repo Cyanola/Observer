@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.observer_.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <GridPane prefHeight="590.0" prefWidth="574.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <StackPane fx:id="ImagePane" maxHeight="400.0" prefHeight="400.0" prefWidth="287.0">
+            <GridPane.margin>
+                <Insets top="-159.0" />
+            </GridPane.margin>
+        </StackPane>
+        <HBox maxHeight="100.0" maxWidth="100.0" minHeight="22.0" minWidth="280.0" prefHeight="100.0" prefWidth="224.0">
+            <TextField fx:id="textField" maxWidth="200.0" minWidth="200.0" prefHeight="34.0" prefWidth="294.0" text="Привет!">
+                <HBox.margin>
+                    <Insets left="-2.0" right="469.0" />
+                </HBox.margin>
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </TextField>
+            <Label prefHeight="36.0" prefWidth="85.0" text="Цвет текста" wrapText="true">
+                <HBox.margin>
+                    <Insets left="-544.0" top="47.0" />
+                </HBox.margin>
+            </Label>
+            <ColorPicker fx:id="color" prefHeight="32.0" prefWidth="39.0">
+                <HBox.margin>
+                    <Insets left="5.0" right="7.0" top="49.0" />
+                </HBox.margin>
+                <value>
+                    <Color red="0.6105263233184814" green="0.09949317574501038" blue="0.09949317574501038" />
+                </value>
+            </ColorPicker>
+            <GridPane.margin>
+                <Insets top="386.0" />
+            </GridPane.margin>
+
+        </HBox>
+        <BorderPane fx:id="TimerText" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"/>
+        <BorderPane fx:id="MediaPage" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
+    </GridPane>
+</VBox>
