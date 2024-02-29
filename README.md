@@ -12,7 +12,8 @@
   <p>![task}(src/main/resources/Images/im.png)
     
   <p>![task2}(src/main/resources/Images/EmbeddedImage.png)
-  ### Диаграмма классов
+    <p></p>
+### Диаграмма классов
 ![class diagram](src/main/resources/Images/Builder_structure.svg)
 
 
