@@ -9,9 +9,11 @@
 
 <p>Когда объект Subject изменяется, он извещает об этом всех зарегистрированных наблюдателей. После этого каждый обозреватель запрашивает у объекта Subject ту часть состояния, которая необходима для отображения данных.
 
-  <p>![task}(src/main/resources/Images/im.png)
+  <p>
+    ![task](src/main/resources/Images/im.png)
     
-  <p>![task2}(src/main/resources/Images/EmbeddedImage.png)
+  <p>
+    ![task2](src/main/resources/Images/EmbeddedImage.png)
     <p></p>
 ### Диаграмма классов
 ![class diagram](src/main/resources/Images/Builder_structure.svg)
